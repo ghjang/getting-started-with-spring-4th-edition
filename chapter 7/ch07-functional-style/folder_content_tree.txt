@@ -1,0 +1,44 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 7\CH07-FUNCTIONAL-STYLE
+│  pom.xml
+│  
+├─bin
+│  │  pom.xml
+│  │  
+│  └─src
+│      └─main
+│          ├─java
+│          │  └─com
+│          │      └─sample
+│          │          └─functionalstyle
+│          │              │  SampleApp.class
+│          │              │  
+│          │              └─domain
+│          │                      Person.class
+│          │                      Profile.class
+│          │                      
+│          └─resources
+│              │  log4j2.properties
+│              │  
+│              └─META-INF
+│                      devDB.properties
+│                      productionDB.properties
+│                      
+└─src
+    └─main
+        ├─java
+        │  └─com
+        │      └─sample
+        │          └─functionalstyle
+        │              │  SampleApp.java
+        │              │  
+        │              └─domain
+        │                      Person.java
+        │                      Profile.java
+        │                      
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                    devDB.properties
+                    productionDB.properties
+                    

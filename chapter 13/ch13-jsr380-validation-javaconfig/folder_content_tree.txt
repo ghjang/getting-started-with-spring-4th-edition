@@ -1,0 +1,41 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 13\CH13-JSR380-VALIDATION-JAVACONFIG
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter13
+        │              │  BankAppInitializer.java
+        │              │  RootContextConfig.java
+        │              │  WebContextConfig.java
+        │              │  
+        │              ├─dao
+        │              │      FixedDepositDao.java
+        │              │      FixedDepositDaoImpl.java
+        │              │      
+        │              ├─domain
+        │              │      FixedDepositDetails.java
+        │              │      
+        │              ├─service
+        │              │      FixedDepositService.java
+        │              │      FixedDepositServiceImpl.java
+        │              │      
+        │              └─web
+        │                      FixedDepositController.java
+        │                      
+        ├─resources
+        │      log4j2.properties
+        │      
+        └─webapp
+            │  index.jsp
+            │  
+            └─WEB-INF
+                └─jsp
+                    │  createFixedDepositForm.jsp
+                    │  editFixedDepositForm.jsp
+                    │  
+                    └─fixedDeposit
+                            list.jsp
+                            

@@ -1,0 +1,28 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 3\CH03-UTIL-SCHEMA-EXAMPLES
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter03
+        │              │  SampleApp.java
+        │              │  
+        │              └─beans
+        │                      BankDetails.java
+        │                      CollectionTypesExample.java
+        │                      DataTypesExample.java
+        │                      MyPropertyRegistrar.java
+        │                      
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                │  addresses.properties
+                │  sample1.properties
+                │  sample2.properties
+                │  
+                └─spring
+                        applicationContext.xml
+                        

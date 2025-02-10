@@ -1,0 +1,46 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 7\CH07-BANKAPP-CONFIGURATION
+│  pom.xml
+│  
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─sample
+    │  │      └─spring
+    │  │          └─chapter07
+    │  │              └─bankapp
+    │  │                  │  BankApp.java
+    │  │                  │  BankAppConfiguration.java
+    │  │                  │  BankAppMixed.java
+    │  │                  │  
+    │  │                  ├─dao
+    │  │                  │      AccountStatementDao.java
+    │  │                  │      AccountStatementDaoImpl.java
+    │  │                  │      CustomerRegistrationDao.java
+    │  │                  │      CustomerRegistrationDaoImpl.java
+    │  │                  │      FixedDepositDao.java
+    │  │                  │      FixedDepositDaoImpl.java
+    │  │                  │      TransactionDao.java
+    │  │                  │      TransactionDaoImpl.java
+    │  │                  │      
+    │  │                  ├─domain
+    │  │                  │      AccountStatement.java
+    │  │                  │      CustomerRegistrationDetails.java
+    │  │                  │      FixedDepositDetails.java
+    │  │                  │      
+    │  │                  └─service
+    │  │                          AccountStatementService.java
+    │  │                          AccountStatementServiceImpl.java
+    │  │                          CustomerRegistrationService.java
+    │  │                          CustomerRegistrationServiceImpl.java
+    │  │                          FixedDepositService.java
+    │  │                          FixedDepositServiceImpl.java
+    │  │                          TransactionService.java
+    │  │                          TransactionServiceImpl.java
+    │  │                          
+    │  └─resources
+    │          log4j2.properties
+    │          
+    └─test
+            ._java
+            ._resources
+            

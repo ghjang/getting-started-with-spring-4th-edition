@@ -1,0 +1,47 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 13\CH13-DATA-BINDING
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter13
+        │              ├─dao
+        │              │      FixedDepositDao.java
+        │              │      FixedDepositDaoImpl.java
+        │              │      
+        │              ├─domain
+        │              │      FixedDepositDetails.java
+        │              │      
+        │              ├─service
+        │              │      FixedDepositService.java
+        │              │      FixedDepositServiceImpl.java
+        │              │      
+        │              └─web
+        │                      FixedDepositController.java
+        │                      FixedDepositDetailsValidator.java
+        │                      
+        ├─resources
+        │  │  log4j2.properties
+        │  │  
+        │  └─META-INF
+        │      └─spring
+        │              applicationContext.xml
+        │              
+        └─webapp
+            │  index.jsp
+            │  
+            └─WEB-INF
+                │  web.xml
+                │  
+                ├─jsp
+                │  │  createFixedDepositForm.jsp
+                │  │  editFixedDepositForm.jsp
+                │  │  
+                │  └─fixedDeposit
+                │          list.jsp
+                │          
+                └─spring
+                        bankapp-config.xml
+                        

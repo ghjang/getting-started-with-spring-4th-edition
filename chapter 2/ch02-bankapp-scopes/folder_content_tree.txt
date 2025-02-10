@@ -1,0 +1,43 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 2\CH02-BANKAPP-SCOPES
+│  pom.xml
+│  
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─sample
+    │  │      └─spring
+    │  │          └─chapter02
+    │  │              └─bankapp
+    │  │                  │  BankApp.java
+    │  │                  │  
+    │  │                  ├─controller
+    │  │                  │      FixedDepositController.java
+    │  │                  │      FixedDepositControllerImpl.java
+    │  │                  │      
+    │  │                  ├─dao
+    │  │                  │      FixedDepositDao.java
+    │  │                  │      FixedDepositDaoImpl.java
+    │  │                  │      
+    │  │                  ├─domain
+    │  │                  │      FixedDepositDetails.java
+    │  │                  │      
+    │  │                  └─service
+    │  │                          FixedDepositService.java
+    │  │                          FixedDepositServiceImpl.java
+    │  │                          
+    │  └─resources
+    │      │  log4j2.properties
+    │      │  
+    │      └─META-INF
+    │          └─spring
+    │                  applicationContext.xml
+    │                  
+    └─test
+        └─java
+            └─sample
+                └─spring
+                    └─chapter02
+                        └─bankapp
+                                PrototypeTest.java
+                                SingletonTest.java
+                                

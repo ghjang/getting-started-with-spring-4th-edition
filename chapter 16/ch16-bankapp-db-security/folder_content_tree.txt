@@ -1,0 +1,57 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 16\CH16-BANKAPP-DB-SECURITY
+│  pom.xml
+│  
+├─scripts
+│      bankapp.sql
+│      
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter16
+        │              ├─dao
+        │              │      FixedDepositDao.java
+        │              │      FixedDepositDaoImpl.java
+        │              │      
+        │              ├─domain
+        │              │      FixedDepositDetails.java
+        │              │      
+        │              ├─security
+        │              │      MyAuthFailureHandler.java
+        │              │      
+        │              ├─service
+        │              │      FixedDepositService.java
+        │              │      FixedDepositServiceImpl.java
+        │              │      
+        │              └─web
+        │                      FixedDepositController.java
+        │                      LoginController.java
+        │                      
+        ├─resources
+        │  │  log4j2.properties
+        │  │  
+        │  └─META-INF
+        │      │  database.properties
+        │      │  
+        │      └─spring
+        │              applicationContext-security.xml
+        │              applicationContext.xml
+        │              
+        └─webapp
+            │  index.jsp
+            │  
+            └─WEB-INF
+                │  web.xml
+                │  
+                ├─jsp
+                │      access-denied.jsp
+                │      createFixedDepositForm.jsp
+                │      editFixedDepositForm.jsp
+                │      error.jsp
+                │      fixedDepositList.jsp
+                │      login.jsp
+                │      
+                └─spring
+                        bankapp-config.xml
+                        

@@ -1,0 +1,36 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 3\CH03-BANKAPP-MODULAR
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter03
+        │              └─bankapp
+        │                  │  BankApp.java
+        │                  │  
+        │                  ├─controller
+        │                  │      FixedDepositController.java
+        │                  │      FixedDepositControllerImpl.java
+        │                  │      
+        │                  ├─dao
+        │                  │      FixedDepositDao.java
+        │                  │      FixedDepositHibernateDao.java
+        │                  │      
+        │                  ├─domain
+        │                  │      FixedDepositDetails.java
+        │                  │      
+        │                  └─service
+        │                          FixedDepositService.java
+        │                          FixedDepositServiceImpl.java
+        │                          
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                └─spring
+                        bankapp-controller.xml
+                        bankapp-dao.xml
+                        bankapp-service.xml
+                        

@@ -1,0 +1,11 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 17\CH17-LAZY-EVALUATION
+│  pom.xml
+│  
+└─src
+    └─main
+        └─java
+            └─sample
+                └─streams
+                        LazyEval.java
+                        Person.java
+                        

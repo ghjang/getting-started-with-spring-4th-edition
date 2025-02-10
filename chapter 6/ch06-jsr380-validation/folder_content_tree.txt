@@ -1,0 +1,38 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 6\CH06-JSR380-VALIDATION
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter06
+        │              └─bankapp
+        │                  │  BankApp.java
+        │                  │  Configuration.java
+        │                  │  
+        │                  ├─dao
+        │                  │      CustomerRequestDao.java
+        │                  │      CustomerRequestDaoImpl.class
+        │                  │      CustomerRequestDaoImpl.java
+        │                  │      FixedDepositDao.java
+        │                  │      FixedDepositDaoImpl.java
+        │                  │      
+        │                  ├─domain
+        │                  │      CustomerRequestDetails.java
+        │                  │      FixedDepositDetails.java
+        │                  │      
+        │                  └─service
+        │                          CustomerRequestService.java
+        │                          CustomerRequestServiceImpl.java
+        │                          FixedDepositService.java
+        │                          FixedDepositServiceImpl.java
+        │                          FixedDepositServiceJsr380Impl.java
+        │                          
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                └─spring
+                        applicationContext.xml
+                        

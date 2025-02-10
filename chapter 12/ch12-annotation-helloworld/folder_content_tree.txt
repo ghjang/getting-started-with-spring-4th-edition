@@ -1,0 +1,25 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 12\CH12-ANNOTATION-HELLOWORLD
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter10
+        │              └─web
+        │                      HelloWorldController.java
+        │                      
+        ├─resources
+        │      log4j2.properties
+        │      
+        └─webapp
+            └─WEB-INF
+                │  web.xml
+                │  
+                ├─jsp
+                │      helloworld.jsp
+                │      
+                └─spring
+                        myapp-config.xml
+                        

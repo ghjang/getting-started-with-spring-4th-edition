@@ -1,0 +1,43 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 8\CH08-BANKAPP-JDBC
+│  pom.xml
+│  
+├─sql
+│      spring_bank_app_db.sql
+│      
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─sample
+    │  │      └─spring
+    │  │          └─chapter08
+    │  │              └─bankapp
+    │  │                  │  BankApp.java
+    │  │                  │  
+    │  │                  ├─dao
+    │  │                  │      BankAccountDao.java
+    │  │                  │      BankAccountDaoImpl.java
+    │  │                  │      FixedDepositDao.java
+    │  │                  │      FixedDepositDaoImpl.java
+    │  │                  │      
+    │  │                  ├─domain
+    │  │                  │      BankAccountDetails.java
+    │  │                  │      FixedDepositDetails.java
+    │  │                  │      
+    │  │                  └─service
+    │  │                          BankAccountService.java
+    │  │                          BankAccountServiceImpl.java
+    │  │                          FixedDepositService.java
+    │  │                          FixedDepositServiceImpl.java
+    │  │                          
+    │  └─resources
+    │      │  log4j2.properties
+    │      │  
+    │      └─META-INF
+    │          └─spring
+    │                  applicationContext.xml
+    │                  database.properties
+    │                  
+    └─test
+            ._java
+            ._resources
+            

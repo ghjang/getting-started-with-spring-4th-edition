@@ -1,0 +1,25 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 5\CH05-PROPERTY-PLACEHOLDER-ELEMENT-EXAMPLE
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter05
+        │              ├─domain
+        │              │      DataSource.java
+        │              │      WebServiceConfiguration.java
+        │              │      
+        │              └─main
+        │                      SampleApp.java
+        │                      
+        └─resources
+            │  database.properties
+            │  log4j2.properties
+            │  webservice.properties
+            │  
+            └─META-INF
+                └─spring
+                        applicationContext.xml
+                        

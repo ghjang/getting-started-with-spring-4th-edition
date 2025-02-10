@@ -1,0 +1,24 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 3\CH03-NAMESPACES-EXAMPLE
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter03
+        │              │  SampleApp.java
+        │              │  
+        │              └─beans
+        │                      Address.java
+        │                      BankDetails.java
+        │                      BankStatement.java
+        │                      MyPropertyRegistrar.java
+        │                      
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                └─spring
+                        applicationContext.xml
+                        

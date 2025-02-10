@@ -1,0 +1,22 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 15\CH15-ASYNC-WEBSERVICE-CLIENT
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter15
+        │              │  FixedDepositWSClient.java
+        │              │  MyErrorHandler.java
+        │              │  
+        │              └─domain
+        │                      FixedDepositDetails.java
+        │                      
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                └─spring
+                        applicationContext.xml
+                        

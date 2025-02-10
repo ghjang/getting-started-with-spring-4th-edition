@@ -1,0 +1,57 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 4\CH04-BANKAPP-DEPENDENCIES
+│  pom.xml
+│  
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─sample
+    │  │      └─spring
+    │  │          └─chapter04
+    │  │              └─bankapp
+    │  │                  │  BankApp.java
+    │  │                  │  Constants.java
+    │  │                  │  
+    │  │                  ├─dao
+    │  │                  │      CustomerRegistrationDao.java
+    │  │                  │      CustomerRegistrationDaoImpl.java
+    │  │                  │      CustomerRequestDao.java
+    │  │                  │      CustomerRequestDaoImpl.java
+    │  │                  │      FixedDepositDao.java
+    │  │                  │      FixedDepositDaoImpl.java
+    │  │                  │      
+    │  │                  ├─domain
+    │  │                  │      CustomerRegistrationDetails.java
+    │  │                  │      CustomerRequestDetails.java
+    │  │                  │      FixedDepositDetails.java
+    │  │                  │      
+    │  │                  ├─event
+    │  │                  │      DatabaseEventSender.java
+    │  │                  │      Event.java
+    │  │                  │      EventSender.java
+    │  │                  │      FixedDepositCreatedEvent.java
+    │  │                  │      MessagingEventSender.java
+    │  │                  │      WebServiceEventSender.java
+    │  │                  │      
+    │  │                  └─service
+    │  │                          CustomerRegistrationService.java
+    │  │                          CustomerRegistrationServiceImpl.java
+    │  │                          CustomerRequestService.java
+    │  │                          CustomerRequestServiceImpl.java
+    │  │                          EventSenderSelectorServiceImpl.java
+    │  │                          FixedDepositService.java
+    │  │                          FixedDepositServiceImpl.java
+    │  │                          
+    │  └─resources
+    │      │  log4j2.properties
+    │      │  
+    │      └─META-INF
+    │          ├─config
+    │          │      appConfig.properties
+    │          │      
+    │          └─spring
+    │                  applicationContext.xml
+    │                  
+    └─test
+            ._java
+            ._resources
+            

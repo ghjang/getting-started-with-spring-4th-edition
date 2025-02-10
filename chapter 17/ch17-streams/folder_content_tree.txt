@@ -1,0 +1,19 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 17\CH17-STREAMS
+│  pom.xml
+│  
+└─src
+    └─main
+        └─java
+            └─sample
+                └─streams
+                    │  ConcatenatedStudentNames.java
+                    │  NamesOfStudentsList.java
+                    │  Student.java
+                    │  SumOfOddNumbers.java
+                    │  SumOfStudentsAges.java
+                    │  SumUsingForLoop.java
+                    │  
+                    └─parallel
+                            ConcatNames.java
+                            PrintNames.java
+                            

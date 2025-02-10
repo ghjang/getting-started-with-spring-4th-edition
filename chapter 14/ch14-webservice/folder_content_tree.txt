@@ -1,0 +1,43 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 14\CH14-WEBSERVICE
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter14
+        │              ├─dao
+        │              │      FixedDepositDao.java
+        │              │      FixedDepositDaoImpl.java
+        │              │      
+        │              ├─domain
+        │              │      FixedDepositDetails.java
+        │              │      
+        │              ├─exception
+        │              │      ValidationException.java
+        │              │      
+        │              ├─service
+        │              │      FixedDepositService.java
+        │              │      FixedDepositServiceImpl.java
+        │              │      
+        │              └─web
+        │                      FixedDepositController.java
+        │                      FixedDepositDetailsValidator.java
+        │                      
+        ├─resources
+        │  │  log4j2.properties
+        │  │  
+        │  └─META-INF
+        │      └─spring
+        │              applicationContext.xml
+        │              
+        └─webapp
+            │  index.jsp
+            │  
+            └─WEB-INF
+                │  web.xml
+                │  
+                └─spring
+                        webservice-config.xml
+                        

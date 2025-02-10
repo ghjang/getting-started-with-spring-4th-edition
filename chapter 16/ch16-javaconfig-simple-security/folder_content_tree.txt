@@ -1,0 +1,43 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 16\CH16-JAVACONFIG-SIMPLE-SECURITY
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter16
+        │              │  BankAppInitializer.java
+        │              │  MethodSecurityConfig.java
+        │              │  RootContextConfig.java
+        │              │  SecurityWebApplicationInitializer.java
+        │              │  WebContextConfig.java
+        │              │  WebRequestSecurityConfig.java
+        │              │  
+        │              ├─dao
+        │              │      FixedDepositDao.java
+        │              │      FixedDepositDaoImpl.java
+        │              │      
+        │              ├─domain
+        │              │      FixedDepositDetails.java
+        │              │      
+        │              ├─service
+        │              │      FixedDepositService.java
+        │              │      FixedDepositServiceImpl.java
+        │              │      
+        │              └─web
+        │                      FixedDepositController.java
+        │                      
+        ├─resources
+        │      log4j2.properties
+        │      
+        └─webapp
+            │  index.jsp
+            │  
+            └─WEB-INF
+                └─jsp
+                        createFixedDepositForm.jsp
+                        editFixedDepositForm.jsp
+                        error.jsp
+                        fixedDepositList.jsp
+                        

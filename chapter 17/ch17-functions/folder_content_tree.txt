@@ -1,0 +1,13 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 17\CH17-FUNCTIONS
+│  pom.xml
+│  
+└─src
+    └─main
+        └─java
+            └─sample
+                └─higherorder
+                        ConcatAndHashSimplified.java
+                        ListExample.java
+                        MyFunctions.java
+                        MyHigherOrderFunctions.java
+                        

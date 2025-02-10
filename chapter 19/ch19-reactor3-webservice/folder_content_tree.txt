@@ -1,0 +1,55 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 19\CH19-REACTOR3-WEBSERVICE
+│  .gitignore
+│  pom.xml
+│  
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─sample
+    │  │      └─spring
+    │  │          └─chapter19
+    │  │              └─bankapp
+    │  │                  │  BankAppInitializer.java
+    │  │                  │  DatabaseConfig.java
+    │  │                  │  WebConfig.java
+    │  │                  │  
+    │  │                  ├─controller
+    │  │                  │      BankAccountController.java
+    │  │                  │      
+    │  │                  ├─domain
+    │  │                  │      BankAccountDetails.java
+    │  │                  │      FixedDepositDetails.java
+    │  │                  │      
+    │  │                  ├─exception
+    │  │                  │      NotEnoughBalanceException.java
+    │  │                  │      
+    │  │                  ├─repository
+    │  │                  │      BankAccountReactorRepository.java
+    │  │                  │      BankAccountReactorRepositoryCustom.java
+    │  │                  │      BankAccountReactorRepositoryCustomImpl.java
+    │  │                  │      
+    │  │                  └─service
+    │  │                          BankAccountService.java
+    │  │                          BankAccountServiceImpl.java
+    │  │                          
+    │  ├─resources
+    │  │      log4j2.properties
+    │  │      
+    │  └─webapp
+    │      │  index.jsp
+    │      │  
+    │      └─WEB-INF
+    │              web.xml
+    │              
+    └─test
+        │  ._java
+        │  ._resources
+        │  
+        └─java
+            └─sample
+                └─spring
+                    └─chapter19
+                        └─bankapp
+                                DataAccessTest.java
+                                ReactiveWebClient.java
+                                

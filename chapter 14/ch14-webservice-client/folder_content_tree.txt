@@ -1,0 +1,23 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 14\CH14-WEBSERVICE-CLIENT
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter14
+        │              │  FixedDepositWSClient.java
+        │              │  FixedDepositWSWebClient.java
+        │              │  MyErrorHandler.java
+        │              │  
+        │              └─domain
+        │                      FixedDepositDetails.java
+        │                      
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                └─spring
+                        applicationContext.xml
+                        

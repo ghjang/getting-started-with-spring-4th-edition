@@ -1,0 +1,23 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 7\CH07-INDEXED-ANNOTATION
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─com
+        │      └─sample
+        │          └─functionalstyle
+        │              │  SampleApp.java
+        │              │  
+        │              └─domain
+        │                      BeanA.java
+        │                      BeanB.java
+        │                      MyConfiguration.java
+        │                      
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                    devDB.properties
+                    productionDB.properties
+                    

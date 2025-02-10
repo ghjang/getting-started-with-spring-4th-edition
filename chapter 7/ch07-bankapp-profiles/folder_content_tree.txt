@@ -1,0 +1,40 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 7\CH07-BANKAPP-PROFILES
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter07
+        │              └─bankapp
+        │                  │  BankAppConfiguration.java
+        │                  │  BankAppWithoutProfile.java
+        │                  │  BankAppWithProfile.java
+        │                  │  DevDBConfiguration.java
+        │                  │  ProdDBConfiguration.java
+        │                  │  
+        │                  ├─controller
+        │                  │      FixedDepositController.java
+        │                  │      FixedDepositControllerImpl.java
+        │                  │      
+        │                  ├─dao
+        │                  │      FixedDepositDao.java
+        │                  │      FixedDepositHibernateDao.java
+        │                  │      FixedDepositMyBatisDao.java
+        │                  │      
+        │                  ├─domain
+        │                  │      DataSource.java
+        │                  │      FixedDepositDetails.java
+        │                  │      
+        │                  └─service
+        │                          FixedDepositService.java
+        │                          FixedDepositServiceImpl.java
+        │                          
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                    devDB.properties
+                    productionDB.properties
+                    

@@ -1,0 +1,48 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 6\CH06-LAZY-DEPENDENCIES
+│  pom.xml
+│  
+├─bin
+│  │  pom.xml
+│  │  
+│  └─src
+│      ├─main
+│      │  ├─java
+│      │  │  └─sample
+│      │  │      └─spring
+│      │  │              MyServices.class
+│      │  │              SampleApp.class
+│      │  │              StatefulService.class
+│      │  │              StatelessService.class
+│      │  │              
+│      │  └─resources
+│      │      │  log4j.properties
+│      │      │  
+│      │      └─META-INF
+│      │          └─spring
+│      │                  applicationContext.xml
+│      │                  
+│      └─test
+│              ._java
+│              ._resources
+│              
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─sample
+    │  │      └─spring
+    │  │              MyServices.java
+    │  │              SampleApp.java
+    │  │              StatefulService.java
+    │  │              StatelessService.java
+    │  │              
+    │  └─resources
+    │      │  log4j2.properties
+    │      │  
+    │      └─META-INF
+    │          └─spring
+    │                  applicationContext.xml
+    │                  
+    └─test
+            ._java
+            ._resources
+            

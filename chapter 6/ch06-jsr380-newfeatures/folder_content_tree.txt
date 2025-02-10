@@ -1,0 +1,22 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 6\CH06-JSR380-NEWFEATURES
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter06
+        │              └─newfeatures
+        │                  │  SampleApp.java
+        │                  │  
+        │                  └─domain
+        │                          Profile.java
+        │                          
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                └─spring
+                        applicationContext.xml
+                        

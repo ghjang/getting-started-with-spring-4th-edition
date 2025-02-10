@@ -1,0 +1,40 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 6\CH06-BEAN-PROFILES
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter06
+        │              └─bankapp
+        │                  │  BankAppWithoutProfile.java
+        │                  │  BankAppWithProfile.java
+        │                  │  
+        │                  ├─controller
+        │                  │      FixedDepositController.java
+        │                  │      FixedDepositControllerImpl.java
+        │                  │      
+        │                  ├─dao
+        │                  │      FixedDepositDao.java
+        │                  │      FixedDepositHibernateDao.java
+        │                  │      FixedDepositMyBatisDao.java
+        │                  │      
+        │                  ├─domain
+        │                  │      DataSource.java
+        │                  │      FixedDepositDetails.java
+        │                  │      
+        │                  └─service
+        │                          FixedDepositService.java
+        │                          FixedDepositServiceImpl.java
+        │                          
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                │  devDB.properties
+                │  productionDB.properties
+                │  
+                └─spring
+                        applicationContext.xml
+                        

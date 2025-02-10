@@ -1,0 +1,40 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 9\CH09-SPRINGDATA-MONGO
+│  pom.xml
+│  
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─sample
+    │  │      └─spring
+    │  │          └─chapter09
+    │  │              └─bankapp
+    │  │                  │  BankApp.java
+    │  │                  │  DatabaseConfig.java
+    │  │                  │  
+    │  │                  ├─domain
+    │  │                  │      BankAccountDetails.java
+    │  │                  │      FixedDepositDetails.java
+    │  │                  │      
+    │  │                  ├─exceptions
+    │  │                  │      NoFixedDepositFoundException.java
+    │  │                  │      
+    │  │                  ├─repository
+    │  │                  │      BankAccountRepository.java
+    │  │                  │      BankAccountRepositoryCustom.java
+    │  │                  │      BankAccountRepositoryImpl.java
+    │  │                  │      
+    │  │                  └─service
+    │  │                          BankAccountService.java
+    │  │                          BankAccountServiceImpl.java
+    │  │                          
+    │  └─resources
+    │      │  log4j2.properties
+    │      │  
+    │      └─META-INF
+    │          └─spring
+    │                  applicationContext.xml
+    │                  
+    └─test
+            ._java
+            ._resources
+            

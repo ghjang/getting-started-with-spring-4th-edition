@@ -1,0 +1,24 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 3\CH03-SIMPLE-TYPES-EXAMPLES
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter03
+        │              │  SampleApp.java
+        │              │  
+        │              └─beans
+        │                      BankDetails.java
+        │                      CollectionTypesExample.java
+        │                      DataTypesExample.java
+        │                      MyPropertyEditorRegistrar.java
+        │                      
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                └─spring
+                        applicationContext.xml
+                        

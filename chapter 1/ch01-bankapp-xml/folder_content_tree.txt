@@ -1,0 +1,28 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 1\CH01-BANKAPP-XML
+│  pom.xml
+│  
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─sample
+    │  │      └─spring
+    │  │          └─chapter01
+    │  │              └─bankapp
+    │  │                      BankApp.java
+    │  │                      FixedDepositController.java
+    │  │                      FixedDepositDao.java
+    │  │                      FixedDepositDaoFactory.java
+    │  │                      FixedDepositDetails.java
+    │  │                      FixedDepositService.java
+    │  │                      
+    │  └─resources
+    │      │  log4j2.properties
+    │      │  
+    │      └─META-INF
+    │          └─spring
+    │                  applicationContext.xml
+    │                  
+    └─test
+            ._java
+            ._resources
+            

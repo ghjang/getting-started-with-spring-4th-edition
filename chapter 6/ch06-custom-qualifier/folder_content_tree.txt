@@ -1,0 +1,37 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 6\CH06-CUSTOM-QUALIFIER
+│  pom.xml
+│  
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─sample
+    │  │      └─spring
+    │  │          └─chapter06
+    │  │              └─bankapp
+    │  │                  │  BankApp.java
+    │  │                  │  
+    │  │                  ├─annotation
+    │  │                  │      BankType.java
+    │  │                  │      FundTransfer.java
+    │  │                  │      TransferSpeed.java
+    │  │                  │      
+    │  │                  ├─domain
+    │  │                  │      Account.java
+    │  │                  │      
+    │  │                  └─service
+    │  │                          FundTransferProcessor.java
+    │  │                          FundTransferService.java
+    │  │                          ImmediateDiffBank.java
+    │  │                          ImmediateSameBank.java
+    │  │                          
+    │  └─resources
+    │      │  log4j2.properties
+    │      │  
+    │      └─META-INF
+    │          └─spring
+    │                  applicationContext.xml
+    │                  
+    └─test
+            ._java
+            ._resources
+            

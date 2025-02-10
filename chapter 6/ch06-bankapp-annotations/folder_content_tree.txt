@@ -1,0 +1,57 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 6\CH06-BANKAPP-ANNOTATIONS
+│  pom.xml
+│  
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─sample
+    │  │      └─spring
+    │  │          └─chapter06
+    │  │              └─bankapp
+    │  │                  │  BankApp.java
+    │  │                  │  Constants.java
+    │  │                  │  
+    │  │                  ├─dao
+    │  │                  │      AccountStatementDao.java
+    │  │                  │      AccountStatementDaoImpl.java
+    │  │                  │      CustomerRegistrationDao.java
+    │  │                  │      CustomerRegistrationDaoImpl.java
+    │  │                  │      CustomerRequestDao.java
+    │  │                  │      CustomerRequestDaoImpl.java
+    │  │                  │      FixedDepositDao.java
+    │  │                  │      FixedDepositDaoImpl.java
+    │  │                  │      TxDao.java
+    │  │                  │      TxDaoImpl.java
+    │  │                  │      
+    │  │                  ├─domain
+    │  │                  │      AccountStatement.java
+    │  │                  │      CustomerRegistrationDetails.java
+    │  │                  │      CustomerRequestDetails.java
+    │  │                  │      FixedDepositDetails.java
+    │  │                  │      Tx.java
+    │  │                  │      
+    │  │                  └─service
+    │  │                          AccountStatementService.java
+    │  │                          AccountStatementServiceImpl.java
+    │  │                          CustomerRegistrationService.java
+    │  │                          CustomerRegistrationServiceImpl.java
+    │  │                          CustomerRequestService.java
+    │  │                          CustomerRequestServiceImpl.java
+    │  │                          FixedDepositService.java
+    │  │                          FixedDepositServiceImpl.java
+    │  │                          MyService.java
+    │  │                          Services.java
+    │  │                          TxService.java
+    │  │                          TxServiceImpl.java
+    │  │                          
+    │  └─resources
+    │      │  log4j2.properties
+    │      │  
+    │      └─META-INF
+    │          └─spring
+    │                  applicationContext.xml
+    │                  
+    └─test
+            ._java
+            ._resources
+            

@@ -1,0 +1,50 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 9\CH09-SPRINGDATA-JPA
+│  pom.xml
+│  
+├─sql
+│      spring_bank_app_db.sql
+│      
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─sample
+    │  │      └─spring
+    │  │          └─chapter09
+    │  │              └─bankapp
+    │  │                  │  BankApp.java
+    │  │                  │  DatabaseConfig.java
+    │  │                  │  
+    │  │                  ├─domain
+    │  │                  │      BankAccountDetails.java
+    │  │                  │      FixedDepositDetails.java
+    │  │                  │      
+    │  │                  ├─exceptions
+    │  │                  │      NoFixedDepositFoundException.java
+    │  │                  │      
+    │  │                  ├─repository
+    │  │                  │      BankAccountRepository.java
+    │  │                  │      BankAccountRepositoryCustom.java
+    │  │                  │      BankAccountRepositoryImpl.java
+    │  │                  │      FixedDepositRepository.java
+    │  │                  │      FixedDepositRepositoryCustom.java
+    │  │                  │      FixedDepositRepositoryImpl.java
+    │  │                  │      
+    │  │                  └─service
+    │  │                          BankAccountService.java
+    │  │                          BankAccountServiceImpl.java
+    │  │                          FixedDepositService.java
+    │  │                          FixedDepositServiceImpl.java
+    │  │                          
+    │  └─resources
+    │      │  log4j2.properties
+    │      │  
+    │      └─META-INF
+    │          │  database.properties
+    │          │  
+    │          └─spring
+    │                  applicationContext.xml
+    │                  
+    └─test
+            ._java
+            ._resources
+            

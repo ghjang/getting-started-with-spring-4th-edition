@@ -1,0 +1,45 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 12\CH12-BANKAPP
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter12
+        │              ├─dao
+        │              │      FixedDepositDao.java
+        │              │      FixedDepositDaoImpl.java
+        │              │      
+        │              ├─domain
+        │              │      FixedDepositDetails.java
+        │              │      
+        │              ├─service
+        │              │      FixedDepositService.java
+        │              │      FixedDepositServiceImpl.java
+        │              │      
+        │              └─web
+        │                      FixedDepositController.java
+        │                      
+        ├─resources
+        │  │  log4j2.properties
+        │  │  
+        │  └─META-INF
+        │      └─spring
+        │              applicationContext.xml
+        │              
+        └─webapp
+            │  index.jsp
+            │  
+            └─WEB-INF
+                │  web.xml
+                │  
+                ├─jsp
+                │      createFixedDepositForm.jsp
+                │      editFixedDepositForm.jsp
+                │      error.jsp
+                │      fixedDepositList.jsp
+                │      
+                └─spring
+                        bankapp-config.xml
+                        

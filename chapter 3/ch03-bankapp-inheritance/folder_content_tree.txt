@@ -1,0 +1,44 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 3\CH03-BANKAPP-INHERITANCE
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter03
+        │              └─bankapp
+        │                  │  BankApp.java
+        │                  │  
+        │                  ├─controller
+        │                  │      FixedDepositController.java
+        │                  │      FixedDepositControllerImpl.java
+        │                  │      PersonalBankingController.java
+        │                  │      PersonalBankingControllerImpl.java
+        │                  │      
+        │                  ├─dao
+        │                  │      FixedDepositDao.java
+        │                  │      FixedDepositDaoImpl.java
+        │                  │      PersonalBakingDao.java
+        │                  │      PersonalBankingDaoImpl.java
+        │                  │      
+        │                  ├─domain
+        │                  │      BankStatement.java
+        │                  │      FixedDepositDetails.java
+        │                  │      
+        │                  ├─service
+        │                  │      FixedDepositService.java
+        │                  │      FixedDepositServiceImpl.java
+        │                  │      PersonalBankingService.java
+        │                  │      PersonalBankingServiceImpl.java
+        │                  │      
+        │                  └─utils
+        │                          DatabaseOperations.java
+        │                          
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                └─spring
+                        applicationContext.xml
+                        

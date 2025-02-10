@@ -1,0 +1,22 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 6\CH06-SPEL-EXAMPLE
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter06
+        │              │  SampleApp.java
+        │              │  
+        │              └─beans
+        │                      Configuration.java
+        │                      Sample.java
+        │                      
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                └─spring
+                        applicationContext.xml
+                        

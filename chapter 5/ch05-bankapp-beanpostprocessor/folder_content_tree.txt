@@ -1,0 +1,44 @@
+﻿GETTING-STARTED-WITH-SPRING-4TH-EDITION\CHAPTER 5\CH05-BANKAPP-BEANPOSTPROCESSOR
+│  pom.xml
+│  
+└─src
+    └─main
+        ├─java
+        │  └─sample
+        │      └─spring
+        │          └─chapter05
+        │              └─bankapp
+        │                  │  BankApp.java
+        │                  │  
+        │                  ├─common
+        │                  │      DependencyResolver.java
+        │                  │      InstanceValidator.java
+        │                  │      MyApplicationContext.java
+        │                  │      
+        │                  ├─dao
+        │                  │      DatabaseConnection.java
+        │                  │      FixedDepositDao.java
+        │                  │      FixedDepositDaoImpl.java
+        │                  │      
+        │                  ├─domain
+        │                  │      FixedDepositDetails.java
+        │                  │      
+        │                  ├─factory
+        │                  │      EventSender.java
+        │                  │      EventSenderFactoryBean.java
+        │                  │      
+        │                  ├─postprocessor
+        │                  │      DependencyResolutionBeanPostProcessor.java
+        │                  │      InstanceValidationBeanPostProcessor.java
+        │                  │      
+        │                  └─service
+        │                          FixedDepositService.java
+        │                          FixedDepositServiceImpl.java
+        │                          
+        └─resources
+            │  log4j2.properties
+            │  
+            └─META-INF
+                └─spring
+                        applicationContext.xml
+                        
