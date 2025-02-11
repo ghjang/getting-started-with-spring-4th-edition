@@ -1,0 +1,55 @@
+@startuml
+title Hello World Spring (Component Scan) 시퀀스 다이어그램
+
+box "Application" #LightBlue
+participant Application
+end box
+
+box "Spring IoC 컨테이너" #LightYellow
+participant ClassPathXmlApplicationContext
+participant HelloBean
+participant HelloService
+end box
+
+box "META-INF/spring/applicationContext.xml" #White
+participant applicationContext.xml
+end box
+
+Application -> ClassPathXmlApplicationContext: ClassPathXmlApplicationContext 생성 (applicationContext.xml)
+activate ClassPathXmlApplicationContext
+
+ClassPathXmlApplicationContext -> applicationContext.xml: XML 설정 파일 읽기
+activate applicationContext.xml
+applicationContext.xml -->> ClassPathXmlApplicationContext: 컴포넌트 스캔 설정 정보 반환 (<context:component-scan>)
+deactivate applicationContext.xml
+
+ClassPathXmlApplicationContext -> ClassPathXmlApplicationContext: 컴포넌트 스캔 시작 (com.example 패키지)
+ClassPathXmlApplicationContext -> HelloBean: @Component 애노테이션 발견 -> HelloBean 인스턴스 생성
+activate HelloBean
+ClassPathXmlApplicationContext -> HelloService: @Service 애노테이션 발견 -> HelloService 인스턴스 생성
+activate HelloService
+
+ClassPathXmlApplicationContext -> HelloBean: @Autowired -> HelloService 빈 주입
+HelloBean -->> ClassPathXmlApplicationContext: 주입 완료
+deactivate HelloService
+
+ClassPathXmlApplicationContext -->> Application: 빈 초기화 완료
+deactivate ClassPathXmlApplicationContext
+
+Application -> ClassPathXmlApplicationContext: getBean("helloBean") 호출
+activate ClassPathXmlApplicationContext
+ClassPathXmlApplicationContext -> HelloBean: HelloBean 인스턴스 반환
+deactivate ClassPathXmlApplicationContext
+
+Application -> HelloBean: printMessage() 호출
+activate HelloBean
+HelloBean -> HelloService: helloService.getMessage() 호출
+activate HelloService
+HelloService -> HelloService: 메시지 생성
+HelloService -->> HelloBean: 메시지 반환
+deactivate HelloService
+HelloBean -> HelloBean: System.out.println(message)
+HelloBean -->> Application: 메시지 출력 완료
+deactivate HelloBean
+
+@enduml
