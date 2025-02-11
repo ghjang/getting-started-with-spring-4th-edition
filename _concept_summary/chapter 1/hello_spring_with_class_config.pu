@@ -1,0 +1,44 @@
+@startuml
+title Hello World Spring (Java Config) 시퀀스 다이어그램
+
+box "Application" #LightBlue
+participant Application
+end box
+
+box "Spring IoC 컨테이너" #LightYellow
+participant AnnotationConfigApplicationContext
+participant HelloBean
+participant AppConfig
+end box
+
+Application -> AnnotationConfigApplicationContext: AnnotationConfigApplicationContext 생성 (AppConfig.class)
+activate AnnotationConfigApplicationContext
+
+AnnotationConfigApplicationContext -> AppConfig: AppConfig 클래스 분석
+activate AppConfig
+
+AppConfig -> HelloBean: HelloBean 인스턴스 생성 (@Bean 메서드 호출)
+activate HelloBean
+
+AppConfig -> HelloBean: setMessage("Hello, Java Config Spring!") 호출
+HelloBean -->> AppConfig: 설정 완료
+deactivate HelloBean
+
+AppConfig -->> AnnotationConfigApplicationContext: 빈 정의 정보 반환
+deactivate AppConfig
+
+AnnotationConfigApplicationContext -->> Application: 빈 초기화 완료
+deactivate AnnotationConfigApplicationContext
+
+Application -> AnnotationConfigApplicationContext: getBean("helloBean") 호출
+activate AnnotationConfigApplicationContext
+AnnotationConfigApplicationContext -> HelloBean: HelloBean 인스턴스 반환
+deactivate AnnotationConfigApplicationContext
+
+Application -> HelloBean: printMessage() 호출
+activate HelloBean
+HelloBean -> HelloBean: System.out.println(message)
+HelloBean -->> Application: 메시지 출력 완료
+deactivate HelloBean
+
+@enduml
