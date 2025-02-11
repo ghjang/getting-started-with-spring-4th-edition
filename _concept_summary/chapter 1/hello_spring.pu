@@ -1,0 +1,46 @@
+@startuml
+title Hello World Spring 시퀀스 다이어그램
+
+box "Application" #LightBlue
+participant Application
+end box
+
+box "Spring IoC 컨테이너" #LightYellow
+participant ApplicationContext
+participant HelloBean
+end box
+
+box "META-INF/spring/applicationContext.xml" #White
+participant applicationContext.xml
+end box
+
+Application -> ApplicationContext: ApplicationContext 생성 (ClassPathXmlApplicationContext)
+activate ApplicationContext
+
+ApplicationContext -> applicationContext.xml: XML 설정 파일 읽기
+activate applicationContext.xml
+applicationContext.xml -->> ApplicationContext: 빈 정의 정보 반환
+deactivate applicationContext.xml
+
+ApplicationContext -> HelloBean: HelloBean 인스턴스 생성
+activate HelloBean
+
+ApplicationContext -> HelloBean: setMessage("Hello, Ultimate Spring!") 호출 (DI)
+HelloBean -->> ApplicationContext: 설정 완료
+deactivate HelloBean
+
+ApplicationContext -->> Application: 빈 초기화 완료
+deactivate ApplicationContext
+
+Application -> ApplicationContext: getBean("helloBean") 호출
+activate ApplicationContext
+ApplicationContext -> HelloBean: HelloBean 인스턴스 반환
+deactivate ApplicationContext
+
+Application -> HelloBean: printMessage() 호출
+activate HelloBean
+HelloBean -> HelloBean: System.out.println(message)
+HelloBean -->> Application: 메시지 출력 완료
+deactivate HelloBean
+
+@enduml

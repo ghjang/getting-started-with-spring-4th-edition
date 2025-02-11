@@ -1,0 +1,20 @@
+@startuml
+start
+:귀무가설(H₀)과 대립가설(H₁) 설정;
+
+repeat
+  :기준점 설정 (유의수준 α, 신뢰구간 등);
+  :표본 데이터 추출;
+  :검정 통계량 계산;
+  :기준점과 비교;
+
+  if (유의한 결과인가?) then (Yes)
+    :귀무가설 기각 (Reject H₀);
+  else (No)
+    :귀무가설 채택 (Fail to Reject H₀);
+  endif
+
+  :오류 분석 (1종 오류, 2종 오류);
+repeat while (기준점 조정 필요?)
+stop
+@enduml
