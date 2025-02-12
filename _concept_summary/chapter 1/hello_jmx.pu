@@ -1,0 +1,89 @@
+@startuml
+title JMX 실행 흐름 시퀀스 다이어그램
+
+participant Administrator
+
+box "JMX Configuration" #LightBlue
+participant applicationContext.xml
+end box
+
+box "JVM Process" #LightGreen
+participant ApplicationContext
+participant HelloBean
+participant MBeanServer
+participant JMXAgent
+end box
+
+box "JMX Console (Client)" #LightCoral
+participant JMXConsole
+end box
+
+Administrator -> applicationContext.xml: 스프링 설정 확인
+activate applicationContext.xml
+applicationContext.xml -->> Administrator: 설정 확인 완료
+deactivate applicationContext.xml
+
+Administrator -> ApplicationContext: 스프링 애플리케이션 실행
+activate ApplicationContext
+
+ApplicationContext -> applicationContext.xml: applicationContext.xml 로드
+activate applicationContext.xml
+applicationContext.xml -->> ApplicationContext: 빈 정의 정보 반환
+deactivate applicationContext.xml
+
+ApplicationContext -> MBeanServer: MBeanServerFactoryBean으로 MBeanServer 생성
+activate MBeanServer
+HelloBean -> MBeanServer: @ManagedResource 애노테이션으로 HelloBean MBean 등록
+activate HelloBean
+MBeanServer -->> HelloBean: MBean 등록 완료
+deactivate HelloBean
+MBeanServer -->> ApplicationContext: MBean 등록 완료
+deactivate MBeanServer
+
+ApplicationContext -->> Administrator: 애플리케이션 실행 완료
+deactivate ApplicationContext
+
+Administrator -> JMXAgent: JVM 옵션으로 JMX 에이전트 활성화
+activate JMXAgent
+
+JMXConsole -> JMXAgent: JMX 서비스 URL로 연결 요청
+activate JMXConsole
+JMXAgent -> JMXAgent: 인증 및 권한 확인
+JMXAgent -> MBeanServer: MBean 목록 요청
+activate MBeanServer
+MBeanServer -> HelloBean: HelloBean 정보 요청
+activate HelloBean
+HelloBean -->> MBeanServer: HelloBean 정보 반환
+deactivate HelloBean
+MBeanServer -->> JMXAgent: MBean 목록 반환
+deactivate MBeanServer
+JMXAgent -->> JMXConsole: MBean 목록 반환
+deactivate JMXAgent
+
+JMXConsole -> JMXAgent: HelloBean MBean의 속성 요청
+activate JMXAgent
+JMXAgent -> MBeanServer: HelloBean MBean의 속성 요청
+activate MBeanServer
+MBeanServer -> HelloBean: HelloBean 속성 값 요청
+activate HelloBean
+HelloBean -->> MBeanServer: HelloBean 속성 값 반환
+deactivate HelloBean
+MBeanServer -->> JMXAgent: HelloBean 속성 값 반환
+deactivate MBeanServer
+JMXAgent -->> JMXConsole: HelloBean 속성 값 반환
+deactivate JMXAgent
+
+JMXConsole -> JMXAgent: HelloBean MBean의 메서드 호출 요청
+activate JMXAgent
+JMXAgent -> MBeanServer: HelloBean MBean의 메서드 호출 요청
+activate MBeanServer
+MBeanServer -> HelloBean: HelloBean 메서드 실행 요청
+activate HelloBean
+HelloBean -->> MBeanServer: HelloBean 메서드 결과 반환
+deactivate HelloBean
+MBeanServer -->> JMXAgent: HelloBean 메서드 결과 반환
+deactivate MBeanServer
+JMXAgent -->> JMXConsole: HelloBean 메서드 결과 반환
+deactivate JMXAgent
+
+@enduml
