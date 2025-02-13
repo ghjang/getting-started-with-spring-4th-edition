@@ -20,6 +20,13 @@ foreach ($chapter in $chapterDirs) {
             Write-Host "Removed target folder in $fullPath"
         }
         
+        # out 폴더가 있으면 삭제합니다.
+        $outFolder = Join-Path $fullPath "out"
+        if (Test-Path $outFolder) {
+            Remove-Item $outFolder -Force -Recurse
+            Write-Host "Removed out folder in $fullPath"
+        }
+        
         # tree 명령으로 출력된 결과를 가져옵니다.
         $treeOutput = & tree /F $fullPath
         $lines = $treeOutput -split "`n"
@@ -35,6 +42,28 @@ foreach ($chapter in $chapterDirs) {
                 }
             }
         }
+        
+        # .vscode 폴더와 그 하위 내용 제거 로직
+        $newLines = @()
+        $skipMode = $false
+        $skipIndent = 0
+        foreach ($line in $lines) {
+            if ($skipMode) {
+                $currentIndent = ($line -replace '^(\s*).*', '$1').Length
+                if ($currentIndent -le $skipIndent) {
+                    $skipMode = $false
+                }
+            }
+            if (-not $skipMode -and $line -match "\.vscode") {
+                $skipIndent = ($line -replace '^(\s*).*', '$1').Length
+                $skipMode = $true
+                continue
+            }
+            if (-not $skipMode) {
+                $newLines += $line
+            }
+        }
+        $lines = $newLines
         
         # 수정된 내용을 folder_content_tree.txt 파일에 저장합니다.
         $lines | Out-File -FilePath $outputFile -Encoding UTF8
