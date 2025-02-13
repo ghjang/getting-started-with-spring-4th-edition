@@ -2,11 +2,18 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
     xmlns:int="http://www.springframework.org/schema/integration"
-    xmlns:int-jmx="http://www.springframework.org/schema/integration/jmx" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-                           http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
-                           http://www.springframework.org/schema/integration/jmx http://schema.spring.io/integration/jmx/spring-integration-jmx.xsd">
+    xmlns:int-jmx="http://www.springframework.org/schema/integration/jmx" xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           https://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/aop
+                           https://www.springframework.org/schema/aop/spring-aop.xsd
+                           http://www.springframework.org/schema/integration
+                           https://www.springframework.org/schema/integration/spring-integration.xsd
+                           http://www.springframework.org/schema/integration/jmx
+                           http://www.springframework.org/schema/integration/jmx/spring-integration-jmx.xsd">
 
     <context:component-scan base-package="com.example"/>
 
@@ -16,5 +23,10 @@
     <!-- MBeanServer 생성 -->
     <bean id="mbeanServer" class="org.springframework.jmx.support.MBeanServerFactoryBean"/>
 
-    <int-jmx:mbean-export server="mbeanServer"/>
+    <!-- MBean 내보내기 -->
+    <context:mbean-export server="mbeanServer"/>
+
+    <!-- AspectJ 자동 프록시 활성화 -->
+    <aop:aspectj-autoproxy/>
+
 </beans>
