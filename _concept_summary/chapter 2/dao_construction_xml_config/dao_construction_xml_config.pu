@@ -8,26 +8,31 @@ skinparam sequenceGroupBodyBackgroundColor transparent
 
 ' 참가자 정의
 participant Main
-participant AnnotationConfigApplicationContext as Context
+participant ClassPathXmlApplicationContext as Context
+participant PropertyPlaceholderConfigurer as PPC
 participant DaoFactory
 participant ArticleJdbcDao
 participant ArticleMybatisDao
 participant ArticleController
 participant ArticleService
-database "application.properties" as Properties
+entity "application.properties" as Properties
+entity "applicationContext.xml" as XML
 
 ' 실행 흐름
-Main -> Context : new AnnotationConfigApplicationContext(DaoFactory.class)
-Context -> DaoFactory : Bean 생성 (DaoFactory.class)
+Main -> Context : new ClassPathXmlApplicationContext("applicationContext.xml")
+Context -> XML : applicationContext.xml 파싱
+XML --> Context : 빈 정의 로드
+Context -> PPC : Bean 생성 (PropertyPlaceholderConfigurer)
 Context -> Properties : application.properties 로드
-Properties --> Context : 프로퍼티 값 반환
+Properties --> PPC : 프로퍼티 값 반환
+Context -> DaoFactory : Bean 생성 (DaoFactory)
 DaoFactory -> Properties : daoType 읽기
 Properties --> DaoFactory : daoType 값 반환
 alt daoType == "jdbc"
-    DaoFactory -> ArticleJdbcDao : new ArticleJdbcDao()
+    Context -> ArticleJdbcDao : Bean 생성 (ArticleJdbcDao)
     ArticleJdbcDao <-- DaoFactory : ArticleDao 빈 반환
 else daoType == "mybatis"
-    DaoFactory -> ArticleMybatisDao : new ArticleMybatisDao()
+    Context -> ArticleMybatisDao : Bean 생성 (ArticleMybatisDao)
     ArticleMybatisDao <-- DaoFactory : ArticleDao 빈 반환
 end
 DaoFactory --> Context : ArticleDao 빈 반환
