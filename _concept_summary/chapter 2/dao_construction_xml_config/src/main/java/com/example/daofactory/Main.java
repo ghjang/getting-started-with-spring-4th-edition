@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) {
         try (ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(
                 "applicationContext.xml")) {
-            ArticleDao articleDao = ctx.getBean("articleDao", ArticleDao.class);
-            Article article = articleDao.getArticle(1);
+            ArticleController articleController = ctx.getBean("articleController", ArticleController.class);
+            Article article = articleController.getArticle(1);
             System.out.println(article);
         }
     }
