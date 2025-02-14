@@ -1,0 +1,71 @@
+@startuml
+' 스타일 설정
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 20
+
+' 참가자 정의
+participant Main
+participant AnnotationConfigApplicationContext as Context
+participant DaoFactory
+participant ArticleJdbcDao
+participant ArticleMybatisDao
+participant ArticleController
+participant ArticleService
+database "application.properties" as Properties
+
+' 액티브 바 스타일
+activate Main
+activate Context
+activate DaoFactory
+activate ArticleJdbcDao
+activate ArticleService
+activate ArticleController
+
+' 실행 흐름
+Main -> Context : new AnnotationConfigApplicationContext(DaoFactory.class)
+activate Context
+Context -> DaoFactory : Bean 생성 (DaoFactory.class)
+activate DaoFactory
+Context -> Properties : application.properties 로드
+Properties --> Context : 프로퍼티 값 반환
+DaoFactory -> Properties : daoType 읽기
+Properties --> DaoFactory : daoType 값 반환
+alt daoType == "jdbc"
+    DaoFactory -> ArticleJdbcDao : new ArticleJdbcDao()
+    activate ArticleJdbcDao
+    ArticleJdbcDao <-- DaoFactory : ArticleDao 빈 반환
+    deactivate ArticleJdbcDao
+else daoType == "mybatis"
+    DaoFactory -> ArticleMybatisDao : new ArticleMybatisDao()
+    activate ArticleMybatisDao
+    ArticleMybatisDao <-- DaoFactory : ArticleDao 빈 반환
+    deactivate ArticleMybatisDao
+end
+DaoFactory --> Context : ArticleDao 빈 반환
+deactivate DaoFactory
+Context -> ArticleController : Bean 생성
+activate ArticleController
+Context -> ArticleService : Bean 생성
+activate ArticleService
+ArticleService -> ArticleController : ArticleController 빈 반환
+deactivate ArticleService
+Context --> Main : 컨텍스트 초기화 완료
+deactivate Context
+Main -> ArticleController : getBean(ArticleController.class)
+activate ArticleController
+Main -> ArticleController : getArticle(1)
+ArticleController -> ArticleService : getArticle(1)
+activate ArticleService
+ArticleService -> ArticleJdbcDao : getArticle(1)
+activate ArticleJdbcDao
+ArticleJdbcDao -> ArticleJdbcDao : 데이터베이스 접근 (JDBC)
+ArticleJdbcDao --> ArticleService : Article 정보 반환
+deactivate ArticleJdbcDao
+ArticleService --> ArticleController : Article 정보 반환
+deactivate ArticleService
+ArticleController --> Main : Article 정보 반환
+deactivate ArticleController
+Main -> Main : System.out.println(article)
+deactivate Main
+
+@enduml
