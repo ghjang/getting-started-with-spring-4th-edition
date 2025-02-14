@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- jdbc 또는 mybatis 선택 -->
+    <bean id="daoFactory"
+        class="com.example.daofactory.DaoFactory">
+        <constructor-arg value="jdbc"/>
+        <!-- <constructor-arg value="mybatis"/> -->
+    </bean>
+
+    <bean id="articleDao"
+        factory-bean="daoFactory"
+        factory-method="getArticleDao"/>
+
+</beans>
