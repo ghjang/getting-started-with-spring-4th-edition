@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-HelloSpringWebScopesApplication<hello-spring-web-scopes>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.hellospringwebscopes.HelloSpringWebScopesApplication",
+            "projectName": "hello-spring-web-scopes",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
