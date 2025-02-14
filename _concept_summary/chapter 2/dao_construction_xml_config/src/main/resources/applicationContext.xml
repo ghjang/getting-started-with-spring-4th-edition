@@ -21,8 +21,10 @@
     <!--
         AutowiredAnnotationBeanPostProcessor 등록합니다.
         이 빈을 등록하면 '.java' 파일에서 '@Value'를 통해서 프로퍼티 값을 주입할 수 있습니다.
+
+        NOTE: 스프링 5.3.10 버전에서는 자동으로 아래와 같이 직접 등록하지 않아도 동작하는 것으로 보임.
     -->
-    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/> -->
 
     <bean id="daoFactory"
         class="com.example.daofactory.DaoFactory">
