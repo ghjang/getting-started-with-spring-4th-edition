@@ -1,0 +1,35 @@
+@startuml
+' 스타일 설정
+skinparam componentStyle uml2
+skinparam linetype polyline
+
+' 컴포넌트 정의
+[JDBC] as jdbc
+[ORM] as orm
+[Hibernate] as hibernate
+[JPA] as jpa
+[SQL Mapper] as sqlmapper
+[MyBatis] as mybatis
+[DAO] as dao
+
+' 관계 정의
+dao ..> orm : uses
+dao ..> sqlmapper : uses
+
+orm -- hibernate : implements
+orm -- jpa : interface
+hibernate ..> jdbc : uses
+
+sqlmapper -- mybatis : implements
+mybatis ..> jdbc : uses
+
+' 설명 추가
+note top of jdbc : 자바 DB 연결 표준 API
+note top of orm : 객체-관계 매핑 기술
+note top of sqlmapper : SQL 쿼리 매핑 프레임워크
+
+' 스타일 추가 (선택 사항)
+' skinparam backgroundColor #EEEBDC
+' skinparam shadowing false
+
+@enduml
