@@ -1,29 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:context="http://www.springframework.org/schema/context"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--
+        @Component 어노테이션 자동 스캔 설정
+        - base-package에 지정된 패키지와 그 하위 패키지의 모든 클래스를 스캔
+        - @Component, @Service, @Repository, @Controller 등의 어노테이션이 붙은 클래스를 빈으로 등록
+        - 빈 이름: 별도 지정이 없으면 클래스명을 카멜케이스로 변환 (예: HelloService → helloService)
+        - 빈 스코프: 별도 지정이 없으면 singleton으로 생성
+    -->
     <context:component-scan base-package="com.example.factorymethod"/>
 
-    <!-- 생성자 주입 방식 -->
-    <bean id="helloServiceConstructor"
-        class="com.example.factorymethod.HelloServiceImpl">
+    <!--
+        1. 생성자 주입 방식
+        - 가장 기본적인 빈 생성 방식
+        - constructor-arg로 생성자 파라미터 값을 전달
+    -->
+    <bean id="helloServiceConstructor" class="com.example.factorymethod.HelloServiceImpl">
         <constructor-arg value="World (Constructor)"/>
     </bean>
 
-    <!-- 정적 팩토리 메서드 방식 -->
-    <bean id="helloServiceFactoryMethod"
-        class="com.example.factorymethod.HelloService"
-        factory-method="createInstance">
+    <!--
+        2. 정적 팩토리 메서드 방식
+        - class: 정적 팩토리 메서드가 정의된 클래스
+        - factory-method: 호출할 정적 메서드명
+        - 인스턴스 생성 없이 직접 클래스의 정적 메서드를 통해 객체 생성
+    -->
+    <bean id="helloServiceFactoryMethod" class="com.example.factorymethod.HelloService" factory-method="createInstance">
         <constructor-arg value="World (Factory Method)"/>
     </bean>
 
-    <!-- 인스턴스 팩토리 메서드 방식 -->
-    <bean id="helloServiceInstanceFactory"
-        factory-bean="helloServiceFactory"
-        factory-method="createInstance">
+    <!--
+        3. 인스턴스 팩토리 메서드 방식
+        - factory-bean: 팩토리 메서드를 가진 빈의 이름.
+                        이 예시 에서는 component-scan으로 '자동 등록'된 빈을 사용.
+                        XML 설정에서 명시적으로 등록한 빈을 사용할 수도 있음.
+        - factory-method: 호출할 인스턴스 메서드명
+        - 팩토리 빈의 인스턴스 메서드를 통해 객체 생성
+    -->
+    <bean id="helloServiceInstanceFactory" factory-bean="helloServiceFactory" factory-method="createInstance">
         <constructor-arg value="World (Instance Factory)"/>
     </bean>
 
