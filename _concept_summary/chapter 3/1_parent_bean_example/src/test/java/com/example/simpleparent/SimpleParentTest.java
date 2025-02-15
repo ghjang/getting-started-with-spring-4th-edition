@@ -6,6 +6,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SimpleParentTest {
+    @Test
+    public void testBeanAFromTemplate() {
+        try (var ctx = new ClassPathXmlApplicationContext(
+                "META-INF/spring/applicationContext.xml")) {
+            var beanA = ctx.getBean("beanAFromTemplate", BeanA.class);
+            assertEquals("Value 1 (from BeanA)", beanA.getProperty1());
+            assertEquals("Empty Value 2", beanA.getProperty2());
+            assertEquals("Value 3 (from BeanA)", beanA.getProperty3());
+        }
+    }
 
     @Test
     public void testBeanA() {

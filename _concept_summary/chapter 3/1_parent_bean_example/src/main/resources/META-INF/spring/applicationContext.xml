@@ -19,6 +19,32 @@
     -->
 
     <!--
+        Abstract Template Bean
+
+        - 'abstract="true"' 속성을 지정하면 해당 빈은 '인스턴스'로 생성되지 않는다.
+          'class'의 지정없이 '빈 설정값'만을 가지는 '템플릿'으로써의 역할을 할 수 있게 구성할 수 있다.
+
+          이 경우에 '빈 설정값'의 유효성은 '추상 빈' 자체에서는 검증되지 않는다.
+          '추상 빈'을 상속받는 '자식 빈'에서 '빈 설정값'의 유효성이 설정시 검증된다.
+    -->
+    <bean id="abstractBeanTemplate" abstract="true">
+        <property name="property1" value="Empty Value 1" />
+        <property name="property2" value="Empty Value 2" />
+    </bean>
+
+    <!--
+        Bean A from Template
+
+        - 'bean 요소'의 'class' 속성을 지정하면 '빈 설정값'을 가지는 '템플릿'을 상속받는
+          '자식 빈'을 생성할 수 있다. '자식 빈'은 '추상 빈'의 설정값을 상속받으며,
+          '추상 빈'의 설정값을 '오버라이딩'하거나 '새로운 설정값'을 추가할 수 있다.
+    -->
+    <bean id="beanAFromTemplate" class="com.example.simpleparent.BeanA" parent="abstractBeanTemplate">
+        <property name="property1" value="Value 1 (from BeanA)" />
+        <property name="property3" value="Value 3 (from BeanA)" />
+    </bean>
+
+    <!--
         Abstract Base Bean
 
         - 'abstract="true"' 속성을 지정하면 해당 빈은 '인스턴스'로 생성되지 않는다.
@@ -81,6 +107,10 @@
         
         - 빈 설정의 상속은 여러 레벨로 구성될 수 있으며, 이 경우 BeanC는
           BeanB를 통해 abstractBaseBean의 설정도 간접적으로 상속받게 된다.
+
+        - 빈 설정의 상속 계층 구조의 (최)상부가 꼭 '추상 빈'일 필요는 없다.
+          '부모 빈'이 '추상 빈'이 아닌 경우에도 '빈 설정값'을 상속받을 수 있다.
+              ; TODO: '부모 빈'이 '추상 빈'이 아닌 경우의 예제 추가
     -->
     <bean id="beanC" class="com.example.simpleparent.BeanC" parent="beanB">
         <property name="property3" value="New Value 3" />
