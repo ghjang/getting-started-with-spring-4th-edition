@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        NOTE:
+            - 'abstract, parent'를 이용한 'Bean 설정값 상속'은 XML 기반 설정에서만 가능하다.
+              Java Configuration(@Configuration)에서는 이와 같은 템플릿 메커니즘을 
+              일반적인 자바 상속이나 합성을 통해 구현해야 한다.
+
+            - 'XML 기반 설정'에 'Configuration 어노테이션 기반 설정' 클래스를 'bean'으로
+              설정해 '빈 설정'을 임포트할 수 있다. 또 반대로 'XML 기반 설정'을 'Configuration
+              어노테이션 기반 설정' 클래스에서 '@ImportResource' 어노테이션을 사용해
+              임포트할 수 있다.
+              즉, '혼합 설정'이 가능하다. 상황에 따라서 융통성 있게 사용할 수 있다는 상황이다.
+              각 설정 방식의 장단점을 살려서 상황에 맞게 사용하면 되겠다.
+                    ; TODO: '혼합 설정' 예제 추가
+    -->
+
+    <!--
+        Abstract Base Bean
+
+        - 'abstract="true"' 속성을 지정하면 해당 빈은 '인스턴스'로 생성되지 않는다.
+          단순히 '유효한 설정값'을 설정하는 '템플릿'으로써의 역할만 한다.
+          지정한 'class'에 유효하지 않은 속성등을 설정시도할 경우에 '예외'가 발생한다.
+          
+        - abstract 빈은 다른 빈 정의의 템플릿 역할을 하므로, 실제로 인스턴스화되지 않는
+          클래스를 지정하거나 클래스를 전혀 지정하지 않을 수도 있다.
+    -->
+    <bean id="abstractBaseBean" class="com.example.simpleparent.BeanA" abstract="true">
+        <property name="property1" value="Base Value 1" />
+        <property name="property2" value="Base Value 2" />
+    </bean>
+
+    <!--
+        Bean A inheriting from Abstract Base Bean
+
+        - 'class' 속성을 지정하지 않고 'parent' 속성을 지정하면 '부모 빈'의 설정값을
+          상속받는다. '부모 빈'의 설정값을 '오버라이딩'하거나 '새로운 설정값'을 추가할 수 있다.
+          
+        - 'beanA'의 경우 'bean 요소'의 'class 속성'이 지정되지 않았기 때문에 '부모 빈'의
+           'class 속성'을 상속받는다. 때문에 'property3' 속성을 설정하는 것은 유효하다.
+
+        - 모든 'bean 요소'의 '속성'이 상속되는 것은 아니다. 예를 들어서 'id, abstract,
+          scope, lazy-init' 등의 '속성'은 상속되지 않는다.
+
+        - 'bean 요소'의 자식으로 있을 수 있는 'property, constructor-arg' 등의 
+          '자식 요소'의 설정값은 상속되며, 자식 빈에서 재정의할 수 있다.
+    -->
+    <bean id="beanA" parent="abstractBaseBean">
+        <property name="property3" value="Value 3 (from BeanA)" />
+    </bean>
+
+    <!--
+        Bean B inheriting from Abstract Base Bean
+
+        - NOTE: 'Bean A, Bean B, Bean C' 자체는 'Java 언어의 class 관점'에서는 어떤
+                '관계'를 형성하고 있지 않다. 그냥 전부 다른 클래스들이다.
+
+                'XML 빈 설정' 방식에서는 자바 언어의 클래스간의 관계없이 '빈 설정값 상속'
+                을 통해 일종의 '설정값 계층 구조'를 굉장히 유연한 'loosely coupled' 방식으로
+                구성할 수 있다. 어떤 면에서는 'duck typing'과 유사한 느낌이다.
+
+                이는 스프링의 'IoC/DI' 컨테이너가 제공하는 강력한 특징 중 하나로,
+                런타임에 동적으로 빈의 구성을 결정할 수 있게 해준다.
+
+                이 예시 프로젝트 코드에서는 '의도적'으로 'Bean A, Bean B, Bean C'를
+                자바 언어의 클래스간의 '상속 관계'로 만들지 않고 그러한 '설정값 계층 구조'를
+                좀더 명확하게 보여주려 했다. 물론 실제 자바 언어 클래스간의 (상속) 관계가
+                있는 클래스들에 대해서도 '설정값 호환성'만 맞으면 '빈 설정값 상속'을 사용할 수 있다.
+    -->
+    <bean id="beanB" class="com.example.simpleparent.BeanB" parent="abstractBaseBean">
+        <property name="property2" value="Overridden Value 2" />
+        <!-- Overriding property2 -->
+        <property name="property3" value="Value 3 (from BeanB)" />
+    </bean>
+
+    <!-- 
+        Bean C inheriting from Bean B (Grandparent)
+        
+        - 빈 설정의 상속은 여러 레벨로 구성될 수 있으며, 이 경우 BeanC는
+          BeanB를 통해 abstractBaseBean의 설정도 간접적으로 상속받게 된다.
+    -->
+    <bean id="beanC" class="com.example.simpleparent.BeanC" parent="beanB">
+        <property name="property3" value="New Value 3" />
+        <!-- Overriding property3 -->
+        <property name="property4" value="Value 4" />
+        <!-- New property -->
+    </bean>
+
+</beans>
